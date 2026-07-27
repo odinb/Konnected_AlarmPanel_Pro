@@ -1,0 +1,27 @@
+substitutions:
+  name: konnected-a95e1c
+  friendly_name: Alarm Panel Pro a95e1c
+
+esphome:
+  name: ${name}
+  name_add_mac_suffix: false
+  friendly_name: ${friendly_name}
+
+packages:
+  konnected.alarm-panel-pro-ethernet: github://konnected-io/konnected-esphome/alarm-panel-pro-v1.8-ethernet.yaml@master
+
+logger:
+  level: WARN
+
+api:
+  encryption:
+    key: !secret api_key10
+
+ota:
+  platform: esphome
+  password: !secret ota_password05
+
+safe_mode:
+  disabled: false
+  reboot_timeout: 10min
+  num_attempts: 5
