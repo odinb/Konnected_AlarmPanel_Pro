@@ -19,7 +19,7 @@ api:
 
 ota:
   platform: esphome
-  password: !secret ota_password05
+  encryption:
 
 safe_mode:
   disabled: false
